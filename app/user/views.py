@@ -5,7 +5,7 @@ from rest_framework.settings import api_settings
 from user.serializers import UserSerializer, AuthTokenSerializer
 
 
-class CreatUserView(generics.CreateAPIView):
+class CreateUserView(generics.CreateAPIView):
     """Create a new user"""
     serializer_class = UserSerializer
 
@@ -13,7 +13,7 @@ class CreatUserView(generics.CreateAPIView):
 class CreateTokenView(ObtainAuthToken):
     """Create a new auth token for user"""
     serializer_class = AuthTokenSerializer
-    render_classes = api_settings.DEFAULT_RENDERER_CLASSES
+    renderer_classes = api_settings.DEFAULT_RENDERER_CLASSES
 
 
 class ManageUserView(generics.RetrieveUpdateAPIView):
